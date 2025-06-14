@@ -2,7 +2,7 @@
 - name: play level variables
   hosts: local
   connection: local
-  variables: 
+  vars: 
     COURSE: Ansible
     DURATION: 10HR
     TRAINER: Shyam R
