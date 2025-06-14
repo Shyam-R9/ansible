@@ -4,12 +4,12 @@
   connection: local
   vars_prompt:
     - name: USERNAME
-      ansible.builtin.debug:
-        msg: Please enter your user name
+      prompt: What is your user name
+      private: false
 
     - name: PASSWORD
-      ansible.builtin.debug:
-        msg: Please enter your PASSWORD
+      prompt: What is your password
+      private: true
 
   tasks:
     - name: "Print user info"
