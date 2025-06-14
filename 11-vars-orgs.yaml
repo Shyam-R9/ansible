@@ -1,6 +1,7 @@
 ---
 - name: Variables from command line arguments
-  hosts: frontend
+  hosts: local
+  connection: local
   tasks:
     - name: course info
       ansible.builtin.debug:
