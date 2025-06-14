@@ -2,5 +2,5 @@
 - name: "connectivity test"
   hosts: frontend
   tasks: #list of tasks
-  - name: "ping the server"
-    ansible.builtin.ping:
+    - name: "ping the server"
+      ansible.builtin.ping:

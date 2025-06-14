@@ -1,0 +1,20 @@
+---
+- name: variabled from files
+  hosts: local
+  connection: local
+  vars_file:
+    - varsfile.yaml
+  tasks:
+    - name: print course information
+      ansible.builtin.debug:
+        msg: "Hello {{ COURSE }}, Course Duration: {{ DURATION }}, Trainer: {{ TRAINER}}, fees: {{ FEES }}"
+
+
+    - name: print course information
+      vars:
+        COURSE: DevSecOps with AWS
+      ansible.builtin.debug:
+        msg: "Hello {{ COURSE }}, Course Duration: {{ DURATION }}, Trainer: {{ TRAINER}}, fees: {{ FEES }}"
+
+
+
