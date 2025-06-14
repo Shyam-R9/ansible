@@ -1,0 +1,7 @@
+---
+- name: Variables from inventory files - part 2
+  hosts: fronend
+  tasks:
+    - name: course info
+      ansible.builtin.debug:
+        msg: "course name: {{ COURSE }}, duration: {{ DURATION }}, trainer: {{ TRAINER }}"
