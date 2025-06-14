@@ -1,5 +1,5 @@
 ---
-- name: "connectivity test".
+- name: "connectivity test"
   hosts: frontend
   tasks: #list of tasks
   - name: "ping the server"
