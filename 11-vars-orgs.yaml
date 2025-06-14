@@ -1,0 +1,7 @@
+---
+- name: Variables from command line arguments
+  hosts: frontend
+  tasks:
+    - name: course info
+      ansible.builtin.debug:
+        msg: "course name: {{ COURSE }} duration: {{ DURATION }}, trainer: {{ TRAINER }}"
