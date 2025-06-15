@@ -3,6 +3,10 @@
   hosts: frontend
   become: yes
   tasks:
+    - name: collect all the installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+
     - name: check if package is installed on Linux 2 and 3
       ansible.builtin.debug:
         msg: "{{ ansible_facts.packages['nginx'] | length }} versions of the Nginx installed"
