@@ -9,7 +9,7 @@
         state: present
       when: ansible_os_family == "RedHat"
 
-    - name: use dnf to install nginx if the os is Debian
+    - name: use apt to install nginx if the os is Debian
       ansible.builtin.apt:
         name: nginx
         state: present
