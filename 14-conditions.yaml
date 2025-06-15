@@ -1,0 +1,16 @@
+---
+- name: "Ansibile conditions"
+  hosts: local
+  connection: local
+  vars:
+    NUMBER=66
+  tasks:
+    - name: "print the nunber if it is less than 100"
+      ansible.builtin.debug:
+        msg: "Entered {{ NUMBER }} is less than or equal to 100"
+      when: NUMBER <= 100
+
+    - name: "print the nunber if greater than 100"
+      ansible.builtin.debug:
+        msg: "Entered {{ NUMBER }} is greater than 100"
+      when: NUMBER > 100
