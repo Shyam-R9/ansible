@@ -3,7 +3,7 @@
   hosts: local
   connection: local
   vars:
-    NUMBER: 66
+    NUMBER: 106
   tasks:
     - name: "print the nunber if it is less than 100"
       ansible.builtin.debug:
