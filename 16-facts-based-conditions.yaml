@@ -1,0 +1,21 @@
+---
+- name: facts based condtions demo
+  hosts: frontend
+  become: yes
+  tasks:
+    - name: use dnf to install nginx if the os is redhat
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+      ansible.builtin.debug:
+        msg: installing using dnf
+      when: ansible_os_family == RedHat
+
+    - name: use dnf to install nginx if the os is Debian
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+      ansible.builtin.debug:
+        msg: installing using aapt
+      when: ansible_os_family == Debian
+
