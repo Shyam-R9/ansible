@@ -1,5 +1,5 @@
 ---
-- name: variabled from files
+- name: variables from files
   hosts: local
   connection: local
   vars_files:
