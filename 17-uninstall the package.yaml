@@ -1,0 +1,17 @@
+---
+- name: facts based condtions demo
+  hosts: frontend
+  become: yes
+  tasks:
+    - name: use dnf to uninstall nginx if the os is redhat
+      ansible.builtin.dnf:
+        name: nginx
+        state: absent
+      when: ansible_os_family == "RedHat"
+
+    - name: use apt to uninstall nginx if the os is Debian
+      ansible.builtin.apt:
+        name: nginx
+        state: absent
+      when: ansible_os_family == "Debian"
+
