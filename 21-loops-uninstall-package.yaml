@@ -1,0 +1,17 @@
+---
+- name: loops demo on uninstall package
+  hosts: frontend
+  become: yes
+  tasks:
+    - name: uninstall 2 packages and keep 1 package
+      ansible.builtin.package:
+        - name: {{ item.name }}
+          state: {{ item.state }}
+      loop:
+        - { name: 'mysql', state: 'absent'}
+        - { name: 'zip', state: 'absent'}
+        - { name: 'nginx', state: 'present'}
+
+        
+
+        
