@@ -5,8 +5,8 @@
   tasks:
     - name: uninstall 2 packages and keep 1 package
       ansible.builtin.package:
-        - name: "{{ item.name }}"
-          state: "{{ item.state }}"
+        name: "{{ item.name }}"
+        state: "{{ item.state }}"
       loop:
         - { name: 'mysql', state: 'absent'}
         - { name: 'zip', state: 'absent'}
