@@ -5,5 +5,5 @@
   tasks:
     - name: check if package is installed on Linux 2 and 3
       ansible.builtin.debug:
-        msg: "{{ ansible-facts.package['nginx'] | length }} versions of the Nginx installed"
+        msg: "{{ ansible-facts.packages['nginx'] | length }} versions of the Nginx installed"
       when: "'nginx' in ansible-facts.packages"
