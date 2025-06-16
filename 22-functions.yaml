@@ -2,11 +2,18 @@
 - name: ansible functions demo
   hosts: local
   connection: local
-  # vars:
-  #   person_name: shyam
+  vars:
+    person_name: R SHYAM PRASAD
   tasks:
     - name: print name
       ansible.builtin.debug:
         msg: "hi {{ person_name | default('shyam prasad') }}"
   
+    - name: print in upper case
+      ansible.builtin.debug:
+        msg: "hi {{ person_name | upper }}"
 
+
+    - name: print in upper case
+      ansible.builtin.debug:
+        msg: "hi {{ person_name | lower }}"
