@@ -11,6 +11,6 @@
 
     - name: print the task result
       ansible.builtin.debug:
-        msg: {{ task_output }}
+        msg: "{{ task_output }}"
     
 
