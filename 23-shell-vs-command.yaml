@@ -2,7 +2,15 @@
 - name: shell vs command demo
   hosts: frontend
   tasks:
-    - name: print ls -l using shell
+    - name: redirect the ls -l using shell
       ansible.builtin.shell: ls -ltr > /tmp/ls-ltr.txt
+
+    - name: capture the output using command
+      ansible.builtin.command: cat /tmp/ls-ltr.txt
+      register: task_output
+
+    - name: print the task result
+      ansible.builtin.debug:
+        msg: {{ task_output }}
     
 
