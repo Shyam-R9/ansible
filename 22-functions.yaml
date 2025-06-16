@@ -2,9 +2,11 @@
 - name: ansible functions demo
   hosts: local
   connection: local
+  vars:
+    person_name: shyam
   tasks:
     - name: print name
       ansible.builtin.debug:
-        msg: "print {{ person_name }}"
+        msg: "hi {{ person_name }}"
   
 
