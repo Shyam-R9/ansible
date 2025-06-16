@@ -1,0 +1,8 @@
+---
+- name: shell vs command demo
+  hosts: frontend
+  tasks:
+    - name: print ls -l using shell
+      ansible.builtin.shell: ls -ltr > /tmp/ls-ltr.txt
+    
+
